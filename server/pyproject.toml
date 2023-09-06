@@ -2,7 +2,7 @@
 name = "server"
 version = "0.1.0"
 description = ""
-authors = ["auto <auto>"]
+authors = ["yusuf ashour <yachour31@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
@@ -12,8 +12,14 @@ djangorestframework = "^3.14.0"
 django-extensions = "^3.2.3"
 python-decouple = "^3.8"
 django-cors-headers = "^4.2.0"
+pytest-django = "^4.5.2"
+psycopg2-binary = "^2.9.7"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "apis.settings"
+python_files = ["tests/test_*.py"]
