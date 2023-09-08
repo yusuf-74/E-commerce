@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Template</title>
+</head>
+<body>
+    <p>Dear User,</p>
+    <p>Please complete the following action:</p>
+    
+    <!-- Your form-like content -->
+    <a href="localhost{% url 'verify_email' %}?user_id={{user_id}}&otp={{otp}}">        
+        Verify
+    </a>
+    
+    <!-- Additional email content -->
+    <p>If you have any questions, please contact us.</p>
+    
+    <p>Thank you,</p>
+    <p>Your Team</p>
+</body>
+</html>
