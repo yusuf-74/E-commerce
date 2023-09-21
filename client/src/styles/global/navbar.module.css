@@ -1,0 +1,26 @@
+.mainNavBar {
+    background-color: #f1f1f1;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0,15%);
+}
+
+.logo {
+    height: 42px;
+    width: 60px;
+    margin: 8px 12px 8px 12px;
+}
+
+.pivotItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
+}
