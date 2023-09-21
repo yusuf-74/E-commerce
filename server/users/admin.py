@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import UserChangeForm
-from .models import User,Address,PhoneNumber,OneTimePassCode
+from .models import User,Address,PhoneNumber,OneTimePassCode,AuthProvider
 
 
 class CustomUserChangeFrom(UserChangeForm):
@@ -28,3 +28,4 @@ admin.site.register(User,CustomUserAdmin)
 admin.site.register(Address)
 admin.site.register(PhoneNumber)
 admin.site.register(OneTimePassCode)
+admin.site.register(AuthProvider)

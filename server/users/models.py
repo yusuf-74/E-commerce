@@ -7,6 +7,10 @@ ROLES = (
     ("staff", "Staff"),
 )
 
+AUTH_PROVIDERS =   (('google', 'google'),
+                    ('facebook', 'facebook'),
+                    ('email', 'email'))
+
 class User(AbstractUser):
 
     role = models.CharField(max_length=50,choices=ROLES, default="customer")
@@ -39,13 +43,21 @@ class Address(models.Model):
 
     def __str__(self):
         return self.pk
-    
+
+
+class AuthProvider(models.Model):
+    provider = models.CharField(max_length=255, choices=AUTH_PROVIDERS)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="auth_providers")
+    access_token = models.CharField(max_length=255,null=True, blank=True)
+    refresh_token = models.CharField(max_length=255, null=True, blank=True)
+
+
 class OneTimePassCode(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="otps")
     otp = models.CharField(max_length=10)
     created_at = models.DateTimeField(auto_now_add=True)
     is_used = models.BooleanField(default=False)
-    
+
     class Meta:
         ordering = ['-created_at','-is_used']
         
