@@ -4,7 +4,7 @@ from .models import User , Address , OneTimePassCode
 
 
 
-class SignUpSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     first_name = serializers.CharField(required=False)
     last_name = serializers.CharField(required=False)
     username = serializers.CharField(required=True)

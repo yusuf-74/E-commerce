@@ -25,12 +25,14 @@ services:
       - db
       
 
-  # frontend:
-  #   build: ./client
-  #   networks:
-  #     - app-net
-  #   volumes:
-  #     - ./client:/home/client
+  frontend:
+    build: ./client
+    environment:
+      - WDS_SOCKET_PORT=0
+    networks:
+      - app-net
+    volumes:
+      - ./client:/home/client
 
 
   db:
@@ -98,6 +100,7 @@ services:
     - "443:443"
     depends_on:
       - api
+      - frontend
   
   
 

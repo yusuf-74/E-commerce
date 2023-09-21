@@ -57,7 +57,6 @@ INSTALLED_APPS = [
     'debug_toolbar',
     # my apps
     'users',
-    
 ]
 
 MIDDLEWARE = [
@@ -162,11 +161,11 @@ USE_TZ = True
 
 AUTH_USER_MODEL = 'users.User'
 
-STATIC_URL = 'api/static/'
+STATIC_URL = 'api/v1/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = []
 
-MEDIA_URL = 'api/media/'
+MEDIA_URL = 'api/v1/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # CELERY SETTINGS

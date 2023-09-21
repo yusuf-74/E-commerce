@@ -19,6 +19,12 @@ celery = {extras = ["redis"], version = "^5.3.4"}
 django-celery-beat = "^2.5.0"
 django-celery-results = "^2.5.1"
 django-debug-toolbar = "^4.2.0"
+requests = "^2.31.0"
+google-api-python-client = "^2.99.0"
+google-auth = "^2.23.0"
+google-auth-oauthlib = "^1.1.0"
+google-auth-httplib2 = "^0.1.1"
+stripe = "^6.5.0"
 
 
 [build-system]
